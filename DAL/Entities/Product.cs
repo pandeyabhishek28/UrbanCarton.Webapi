@@ -8,6 +8,7 @@ namespace UrbanCarton.Webapi.DAL.Entities
 
     public class Product : Entity
     {
+        public int ProductTypeId { get; set; }
         public ProductType Type { get; set; }
 
         [Required]

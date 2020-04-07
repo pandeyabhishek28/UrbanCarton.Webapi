@@ -2,9 +2,8 @@
 
 namespace UrbanCarton.Webapi.DAL.Entities
 {
-    public class ProductReview
+    public class ProductReview : KeyedEntity
     {
-        public int Id { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
 
