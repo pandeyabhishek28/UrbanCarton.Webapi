@@ -14,12 +14,17 @@ namespace UrbanCarton.Webapi.DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Product>> GetAll()
+        public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _dbContext.Products.ToListAsync();
         }
 
-        public async Task<Product> GetOne(int id)
+        public IEnumerable<Product> GetAll()
+        {
+            return _dbContext.Products.AsNoTracking();
+        }
+
+        public async Task<Product> GetOneAsync(int id)
         {
             return await _dbContext.Products.SingleOrDefaultAsync(p => p.Id == id);
         }

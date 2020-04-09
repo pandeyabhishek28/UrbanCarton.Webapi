@@ -15,16 +15,27 @@ namespace UrbanCarton.Webapi.DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<ProductReview>> GetForProduct(int productId)
+        public IEnumerable<ProductReview> GetForProduct(int productId)
         {
-            return await _dbContext.ProductReviews.Where(pr => pr.ProductId == productId).ToListAsync();
+            return _dbContext.ProductReviews.Where(pr => pr.ProductId == productId).ToList();
         }
 
-        public async Task<ILookup<int, ProductReview>> GetForProducts(IEnumerable<int> productIds)
+        public ILookup<int, ProductReview> GetForProducts(IEnumerable<int> productIds)
+        {
+            var reviews = _dbContext.ProductReviews.Where(pr =>
+           productIds.Contains(pr.ProductId)).ToList();
+            return reviews.ToLookup(r => r.ProductId);
+        }
+
+        public async Task<ILookup<int, ProductReview>> GetForProductsAsync(IEnumerable<int> productIds)
         {
             var reviews = await _dbContext.ProductReviews.Where(pr =>
-            productIds.Contains(pr.ProductId)).ToListAsync();
+                            productIds.Contains(pr.ProductId)).ToListAsync();
             return reviews.ToLookup(r => r.ProductId);
+        }
+        public IEnumerable<ProductReview> GetAll()
+        {
+            return _dbContext.ProductReviews.AsNoTracking();
         }
 
         public async Task<ProductReview> AddReview(ProductReview review)

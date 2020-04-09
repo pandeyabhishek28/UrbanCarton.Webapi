@@ -9,8 +9,7 @@ namespace UrbanCarton.Webapi.GraphQL.Types
     public class ProductType : ObjectGraphType<Entities.Product>
     {
         public ProductType(ProductReviewRepository productReviewRepository,
-            Repository<Entities.ProductType> productTypeRepository,
-            IDataLoaderContextAccessor dataLoaderContextAccessor)
+                        IDataLoaderContextAccessor dataLoaderContextAccessor)
         {
             Field(t => t.Id);
             Field(t => t.Name);
@@ -28,7 +27,7 @@ namespace UrbanCarton.Webapi.GraphQL.Types
                     var user = (ClaimsPrincipal)context.UserContext;
                     var loader =
                         dataLoaderContextAccessor.Context.GetOrAddCollectionBatchLoader<int, Entities.ProductReview>(
-                            "GetReviewsByProductId", productReviewRepository.GetForProducts);
+                            "GetReviewsByProductId", productReviewRepository.GetForProductsAsync);
                     return loader.LoadAsync(context.Source.Id);
                 });
         }
