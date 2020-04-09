@@ -11,9 +11,8 @@ You need to update the appsettings for connection string and then you have to ap
 
 You need to install the .Net Core 3.1, EF Core, Graph QL
 
-```
+
 you can get it here [dotnet](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-```
 
 ### Packages
 
