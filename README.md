@@ -1,5 +1,6 @@
 # Urban Carton (A Web Api build with GraphQL)
 
+This project is all about playing with GraphQl in which we can look for products, we can add reviews for a product and can do a lot more.
 I wanted to learn/use GraphQL so I have created a RESTFul WebApi with GraphQL. If you are a beginner and want to dirty your hands 
 then this would be the best point where you can see GraphQl in action.
 
@@ -9,7 +10,7 @@ You need to update the appsettings for connection string and then you have to ap
 
 ### Prerequisites
 
-You need to install the .Net Core 3.1, EF Core, Graph QL
+You need to install the .Net Core 3.1, SQL, EF Core, Graph QL
 
 
 you can get it here [dotnet](https://dotnet.microsoft.com/download/dotnet-core/3.1)
