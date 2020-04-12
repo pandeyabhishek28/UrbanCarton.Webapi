@@ -1,8 +1,7 @@
 # Urban Carton (A Web Api build with GraphQL)
 
 This project is all about playing with GraphQl in which we can look for products, we can add reviews for a product and can do a lot more. I do have added a reference for GraphQL Ui. Playground so that you can test your query/skills without using postman or any other client.
-I wanted to learn/use GraphQL so I have created a RESTFul WebApi with GraphQL. If you are a beginner and want to dirty your hands 
-then this would be the best point where you can see GraphQl in action.
+I wanted to help new GraphQL developers who wanted to use GraphQL with .Net Core so I have created a RESTFul WebApi with GraphQL. If you are a beginner and want to dirty your hands then this would be the best point where you can see GraphQl in action.
 
 ## Getting Started
 
